@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://tscmwy1wiedv"]
+
+[ext_resource type="Script" uid="uid://t8oej848ehll" path="res://addons/kaykit_import_helper/advanced_importer_dock/advanced_importer_dock.gd" id="1_hqwdp"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hqwdp"]
+color = Color(0.5019608, 0.5019608, 0.5019608, 0.7529412)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqwdp"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+
+[sub_resource type="DPITexture" id="DPITexture_hqwdp"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M4 12a1 1 0 0 0 1.555.832l6-4a1 1 0 0 0 0-1.664l-6-4A1 1 0 0 0 4 4z\"/></svg>
+"
+saturation = 2.0
+color_map = {
+Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
+Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
+Color(1, 0.8666667, 0.39607844, 1): Color(0.83, 0.78, 0.62, 1)
+}
+
+[node name="AdvancedImporterDock" type="PanelContainer" unique_id=497867591]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hqwdp")
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=127092788]
+layout_mode = 2
+
+[node name="AdvancedImportSettingsLabel" type="Label" parent="MainContainer" unique_id=890319621]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Advanced Import Settings"
+
+[node name="HSeparatorA" type="HSeparator" parent="MainContainer" unique_id=338937048]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_hqwdp")
+
+[node name="OptionsLabel" type="Label" parent="MainContainer" unique_id=1642291099]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Options"
+
+[node name="GenerateGridmapCheckBox" type="CheckBox" parent="MainContainer" unique_id=2029215376]
+layout_mode = 2
+text = "Generate gridmap resources"
+
+[node name="HSeparatorB" type="HSeparator" parent="MainContainer" unique_id=1788721477]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_hqwdp")
+
+[node name="SelectedFilesRichTextLabel" type="RichTextLabel" parent="MainContainer" unique_id=1471882333]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hqwdp")
+bbcode_enabled = true
+text = "[color=WEB_GRAY]No Selected File / Directory[/color]"
+
+[node name="ReimportButton" type="Button" parent="MainContainer" unique_id=1479434254]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+disabled = true
+text = "Reimport"
+icon = SubResource("DPITexture_hqwdp")
+
+[connection signal="pressed" from="MainContainer/ReimportButton" to="." method="_on_reimport_button_pressed"]
