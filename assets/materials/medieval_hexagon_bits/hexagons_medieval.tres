@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://imyuqa1gys5c"]
+
+[ext_resource type="Texture2D" uid="uid://by7lgj0q4t0bp" path="res://medieval_hexagon_bits/hexagons_medieval.png" id="1_sil1a"]
+
+[resource]
+resource_name = "hexagons_medieval"
+albedo_texture = ExtResource("1_sil1a")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
