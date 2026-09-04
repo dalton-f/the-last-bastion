@@ -6,6 +6,7 @@
 .import/
 export.cfg
 export_credentials.cfg
+assets/models
 
 # Imported translations (automatically generated from CSV files)
 *.translation
